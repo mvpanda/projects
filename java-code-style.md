@@ -1,5 +1,7 @@
 # Java编码规范
 - - -
+created at 2015-06-01
+
 本文档翻译自http://google-styleguide.googlecode.com/svn/trunk/javaguide.html
 
 本文档参考自http://www.hawstein.com/posts/google-java-style.html
