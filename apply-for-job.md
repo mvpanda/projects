@@ -32,6 +32,7 @@
 |爱奇艺|知识图谱资深工程师(偏工程）|北京海淀区海淀北一街|视频知识图谱的挖掘实现|邮件|http://www.newsmth.net/nForum/#!article/Career_Upgrade/361904|
 |阿里巴巴|高级实时计算工程师|朝阳区西大望路1号温特莱中心a座|航旅事业群-实时计算|邮件|http://www.newsmth.net/nForum/#!article/Career_Upgrade/361836|
 |优酷土豆集团|大数据基础平台开发|海淀区理想国际大厦|大数据平台基础模块开发|邮件|http://www.newsmth.net/nForum/#!article/Career_Upgrade/362040|
+|京东|Java开发工程师|北辰|推荐搜索|邮件|http://www.newsmth.net/nForum/#!article/Career_Upgrade/354469|
 
 
 
