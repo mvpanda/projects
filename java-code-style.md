@@ -192,7 +192,7 @@ __4.1.2  非空块：K & R 风格__
 * 右大括号前换行
 * 如果右大括号是一个语句、函数体或类的结尾，则右大括号后换行; 否则不换行。例如，如果右大括号后面是```else```或分号，则不换行。
 
-```
+```java
 return new MyClass() {
     @Override public void method() {
         if (condition()) {
@@ -300,7 +300,7 @@ __术语说明：__水平对齐是指为了使个别元素与其前一行的相�
 
 这是允许的，但这在Google风格中是不被要求的。即使对于已经使用水平对齐的代码，我们也不要求保持这种风格。
 这里有个不对齐以及对齐后的例子：
-```
+```java
 private int x; // this is fine
 private Color color; // this too
 
@@ -343,7 +343,7 @@ __4.8.3.1 数组初始化：可写成块状结构__
 
 数组初始化可以写成块状结构，比如，下面的写法都是可行的（未穷举）：
 
-```
+```java
 new int[] {
   0, 1, 2, 3 
 }
@@ -378,7 +378,7 @@ __4.8.4.1 缩进__
 __4.8.4.2 Fall-through：注释__
 
 在一个switch块内，每个语句组要么通过```break```, ```continue```, ```return```或抛出异常来终止，要么通过一条注释来说明程序将继续执行到下一个语句组， 任何能表达这个意思的注释都是OK的(典型的是用```// fall through```)。这个特殊的注释并不需要在最后一个语句组(一般是```default```)中出现。示例：
-```
+```java
 switch (input) {
   case 1:
   case 2:
@@ -470,7 +470,7 @@ __5.2.4  常量名__
 常量名命名模式为```CONSTANT_CASE```：字母全部大写，用下划线分隔单词。那，到底什么算是一个常量？
 每一个常量都是静态final字段，但不是所有的静态final字段都是常量。
 在决定是否使用常量命名模式时，需要先考虑一个字段是否感觉像是常量。比如，任意一个实例的可观测状态会发生改变，那几乎可以肯定它不是常量。仅仅因为不打算去改变一个对象而认为它是常量是不够的。示例：
-```
+```java
 // 常量
 static final int NUMBER = 5;
 static final ImmutableList<String> NAMES = ImmutableList.of("Ed", "Ann");
@@ -555,7 +555,7 @@ __例外：__当父类方法标有```@Deprecated```时，可省略```@Override``
 
 如果确实不需要在catch块中做任何响应，需要在注释中说明这样做是合理的。
 
-```
+```java
 try {
   int i = Integer.parseInt(response);
   return handleNumericResponse(i);
@@ -567,7 +567,7 @@ return handleTextResponse(response);
 
 __例外：__在测试中，如果一个异常被命名为```expected```，则可以不做注释忽略它。如下是一个常用的语法，用于明确我们所测试的方法确实会抛出我们所期望的异常类型，因此这里不需要注释。
 
-```
+```java
 try {
   emptyStack.pop();
   fail();
@@ -580,7 +580,7 @@ try {
 
 当我们需要调用一个类的静态成员时，应该使用类名，而不是该类的对象或者是该类类型的表达式。
 
-```
+```java
 Foo aFoo = ...;
 Foo.aStaticMethod(); // good
 aFoo.aStaticMethod(); // bad
@@ -602,7 +602,7 @@ somethingThatYieldsAFoo().aStaticMethod(); // very bad
 __7.1.1  基本格式__
 
 Javadoc的基本格式如下所示：
-```
+```java
 /**
  * Multiple lines of Javadoc text are written here,
  * wrapped normally...
