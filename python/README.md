@@ -24,6 +24,108 @@ __List Comprehension__
 print [x * y for x in lst1 if 4 > x > 1 for y in range(10) if y > 5]
 ```
 
+__排序__
+```python
+a = [('2011-03-17', '2.26', 6429600, '0.0'), ('2011-03-16', '2.26', 12036900, '-3.0'), ('2011-03-15', '2.33', 15615500,'-19.1')]
+sorted(a, key=lambda result: result[1],reverse=True)
+
+from operator import itemgetter
+dict = {"a":"1","sss":"2","ffdf":'5',"ffff2":'3'}
+sorted_dict = sorted(dict.items(),key=itemgetter(1))
+```
+
+__时间__
+```python
+import datetime,time,pytz
+
+tz = pytz.timezone('Asia/Shanghai')
+queryTime = datetime.datetime.now(tz) + datetime.timedelta(seconds=seconds)
+# datetime转成string
+print queryTime.strftime("%Y%m%d %H%M%S")
+# string转成datetime
+print datetime.datetime.strptime("20170101 000000", "%Y%m%d %H%M%S")
+# datetime转成毫秒
+ctime = int(time.mktime(queryTime.timetuple())*1000)
+
+queryTime = time.localtime()
+# struct_time转成string
+print queryTime.strftime("%Y%m%d %H%M%S")
+# struct_time转成毫秒
+ctime = int(time.mktime(queryTime)) * 1000
+# 毫秒转成struct_time
+a = 1302153828
+queryTime = time.localtime(a)
+# string转成struct_time
+print time.strptime("20170101 000000", "%Y%m%d %H%M%S")
+```
+
+__文件和目录__
+```python
+import os
+
+fileList = []
+rootdir = "/data"
+for root, dirs, files in os.walk(rootdir):
+    if '.svn' in dirs: dirs.remove('.svn')  # 排除特定目录    
+    for file in files:
+        if file.find(".t2t") != -1:# 查找特定扩展名的文件
+            file_dir_path = os.path.join(root,file)
+            fileList.append(file_dir_path)  
+print fileList
+```
+
+__执行shell命令__
+```python
+import commands
+(exitstatus, outtext) = commands.getstatusoutput('ls /bin/ls')
+```
+
+__捕获__
+```python
+try:
+    do_some_func()
+except KeyboardInterrupt:
+    print "User Press Ctrl+C,Exit"
+except EOFError:
+    print "User Press Ctrl+D,Exit"
+```
+
+__opt__
+```python
+import sys,os,getopt,traceback
+
+def usage():
+    print '''
+Usage: this_script.py [options...]
+Options:
+-e : Exchange Name
+-c : User-Defined Category Name
+-h : this help info
+this_script.py -c "HA Ha"
+'''
+
+try:
+    opts, args = getopt.getopt(sys.argv[1:],'he:c')
+except getopt.GetoptError:
+    traceback.print_exc()
+    usage()
+    sys.exit()
+
+if len(opts) == 0:
+    usage()
+    sys.exit()
+
+for opt, arg in opts:
+    if opt in ('-h', '--help'):
+        print 'help message:'
+        usage()
+        sys.exit()
+    elif opt == '-c':
+        print "user-defined %s " % arg
+    elif opt == '-e':
+        print "Exchange Name %s" % arg
+```
+
 __杂项__
 * 可以使用 del 删除变量或删除数组中的元素。
 
