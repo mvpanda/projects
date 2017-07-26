@@ -1,5 +1,5 @@
 ## 数据结构
-1. *bool.True, bool.False, float, double, int, long, list, set, map, tuple*
+1. *True, False, float, double, int, long, list, set, map, tuple*
 
 ## 语法
 
@@ -22,6 +22,8 @@ __List Comprehension__
 ```python
 #列表推导式由一个表达式以及紧跟着这个表达式的for语句构成，for语句还可以跟0个或多个if或for语句
 print [x * y for x in lst1 if 4 > x > 1 for y in range(10) if y > 5]
+# 在内存占用过大的情况下用生成器(Generator)
+for num in (x * y for x in lst1 if 4 > x > 1 for y in range(10) if y > 5)
 ```
 
 __排序__
@@ -59,6 +61,14 @@ queryTime = time.localtime(a)
 print time.strptime("20170101 000000", "%Y%m%d %H%M%S")
 ```
 
+__运算__
+```python
+#除后向下取整
+print 5.0//2
+# 2的5次方
+print 2**5
+```
+
 __文件和目录__
 ```python
 import os
@@ -70,7 +80,7 @@ for root, dirs, files in os.walk(rootdir):
     for file in files:
         if file.find(".t2t") != -1:# 查找特定扩展名的文件
             file_dir_path = os.path.join(root,file)
-            fileList.append(file_dir_path)  
+            fileList.append(file_dir_path)  # yield ?
 print fileList
 ```
 
@@ -126,8 +136,82 @@ for opt, arg in opts:
         print "Exchange Name %s" % arg
 ```
 
+__装饰器__
+```python
+import time
+from functools import wraps
+ 
+def timethis(func):
+    '''
+    Decorator that reports the execution time.
+    '''
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(func.__name__, end-start)
+        return result
+    return wrapper
+ 
+@timethis
+def countdown(n):
+    while n > 0:
+        n -= 1
+ 
+countdown(100000)
+# 还有类装饰器
+```
+
+__上下文管理库(ContextLib)__
+```python
+import time
+ 
+class demo:
+    def __init__(self, label):
+        self.label = label
+ 
+    def __enter__(self):
+        self.start = time.time()
+ 
+    def __exit__(self, exc_ty, exc_val, exc_tb):
+        end = time.time()
+        print('{}: {}'.format(self.label, end - self.start))
+ 
+with demo('counting'):
+    n = 10000000
+    while n > 0:
+        n -= 1
+ 
+# counting: 1.36000013351
+
+# 另一种写法
+from contextlib import contextmanager
+import time
+ 
+@contextmanager
+def demo(label):
+    start = time.time()
+    try:
+        yield
+    finally:
+        end = time.time()
+        print('{}: {}'.format(label, end - start))
+ 
+with demo('counting'):
+    n = 10000000
+    while n > 0:
+        n -= 1
+ 
+# counting: 1.32399988174
+```
+
 __杂项__
+* 0 < x < 3
 * 可以使用 del 删除变量或删除数组中的元素。
+* for teama, teamb in zip(groupa, groupb):
 
 ## 类库
 * pickle ?
+* collections ?
+* itertools ?
