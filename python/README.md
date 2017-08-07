@@ -135,7 +135,23 @@ for opt, arg in opts:
     elif opt == '-e':
         print "Exchange Name %s" % arg
 ```
+__函数式编程__
+__高阶函数__
+```python
+sorted
 
+def is_odd(n):
+    return n % 2 == 1
+filter(is_odd,[1,2,3])
+# [1,3]
+```
+__偏函数__
+```python
+import functools 
+
+# 把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单
+int2 = functools.partial(int, base=2)
+```
 __装饰器__
 ```python
 import time
