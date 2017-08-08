@@ -145,6 +145,7 @@ for opt, arg in opts:
         print "Exchange Name %s" % arg
 ```
 __函数式编程__
+
 __高阶函数__
 ```python
 sorted
@@ -251,7 +252,9 @@ re.split(r'[ac]','123abc123')
 
 ## 类库
 * pickle,json
+```python
 pickle.dumps(d),pickle.dump(d,f),d = pickle.load(f)
 json.dumps(d),json.dump(d,f),d = json.loads(json_str),d = json.load(f)
+```
 * collections ?
 * itertools ?
