@@ -78,10 +78,17 @@ rootdir = "/data"
 for root, dirs, files in os.walk(rootdir):
     if '.svn' in dirs: dirs.remove('.svn')  # 排除特定目录    
     for file in files:
-        if file.find(".t2t") != -1:# 查找特定扩展名的文件
+        if os.path.splitext(file)[1] == 'txt':# 查找特定扩展名的文件
             file_dir_path = os.path.join(root,file)
             fileList.append(file_dir_path)  # yield ?
 print fileList
+# os.mkdir,listdir,rmdir,isfile,isdir...
+
+with open('/tmp/sth.jpg','rb') as f:
+   f.read(1024) # f.read(),f.readline(),f.readlines()
+
+from io import StringIO,BytesIO
+
 ```
 
 __执行shell命令__
@@ -94,10 +101,12 @@ __捕获__
 ```python
 try:
     do_some_func()
-except KeyboardInterrupt:
+except KeyboardInterrupt as kbi:
     print "User Press Ctrl+C,Exit"
-except EOFError:
+except EOFError as eofe:
     print "User Press Ctrl+D,Exit"
+finally:
+    print "finally"
 ```
 
 __opt__
@@ -223,11 +232,26 @@ with demo('counting'):
 ```
 
 __杂项__
+* 正则
+```python
+import re
+re.match(r'\d+\w+?(\d+)','123abc456').groups() # group(0),group(1)
+#等效于
+pattern = re.compile(r'\d+\w+?(\d+)')
+if pattern.match('123abc456'):
+    print 'ok'
+else:
+    print 'fail'
+    
+re.split(r'[ac]','123abc123')
+```
 * 0 < x < 3
 * 可以使用 del 删除变量或删除数组中的元素。
 * for teama, teamb in zip(groupa, groupb):
 
 ## 类库
-* pickle ?
+* pickle,json
+pickle.dumps(d),pickle.dump(d,f),d = pickle.load(f)
+json.dumps(d),json.dump(d,f),d = json.loads(json_str),d = json.load(f)
 * collections ?
 * itertools ?
