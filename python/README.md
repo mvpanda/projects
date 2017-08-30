@@ -48,6 +48,8 @@ print queryTime.strftime("%Y%m%d %H%M%S")
 print datetime.datetime.strptime("20170101 000000", "%Y%m%d %H%M%S")
 # datetime转成毫秒
 ctime = int(time.mktime(queryTime.timetuple())*1000)
+# 3.0 有timestamp函数，返回一个浮点数，小数位表示毫秒数。反之，还有fromtimestamp
+# ctime = queryTime.timestamp()
 
 queryTime = time.localtime()
 # struct_time转成string
@@ -256,6 +258,7 @@ if __name__=='__main__':
 ```
 
 __多线程__
+
 Python解释器由于设计时有GIL全局锁，导致了多线程无法利用多核（IO场景下还是会有些优化）。如果一定要通过多线程利用多核，那只能通过C扩展来实现，不过这样就失去了Python简单易用的特点。
 
 不过，也不用过于担心，Python虽然不能利用多线程实现多核任务，但可以通过多进程实现多核任务。多个Python进程有各自独立的GIL锁，互不影响。
