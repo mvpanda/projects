@@ -88,24 +88,22 @@ SimpleDateFormat则是一个以与语言环境有关的方式来格式化和解�
 
 ## 一些实例
 ```java
-public class DateExample
-{ 
-  public static void main(String[] args) 
- {
-    Date date = new Date(); 
-    DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT); 
-    DateFormat mediumDateFormat = DateFormat.getDateTimeInstance(DateFormat.MEDIUM,DateFormat.MEDIUM); 
-    DateFormat longDateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG); 
-    DateFormat fullDateFormat = DateFormat.getDateTimeInstance(DateFormat.FULL,DateFormat.FULL); 
- 
-    System.out.println(shortDateFormat.format(date));  //05-8-8 上午9:17 
-    System.out.println(mediumDateFormat.format(date)); //2005-8-8 9:17:42
-    System.out.println(longDateFormat.format(date));  //2005年8月8日 上午09时17分42秒
-    System.out.println(fullDateFormat.format(date));  //2005年8月8日 09时17分42秒 GMT+08:00
-    
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"); // 'T'
-    System.out.println(sdf.parse("2017-06-01T12:00:00"));
-  } 
+public class DateExample {
+    public static void main(String[] args) {
+        Date date = new Date();
+        DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT);
+        DateFormat mediumDateFormat = DateFormat.getDateTimeInstance(DateFormat.MEDIUM,DateFormat.MEDIUM);
+        DateFormat longDateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG);
+        DateFormat fullDateFormat = DateFormat.getDateTimeInstance(DateFormat.FULL,DateFormat.FULL);
+
+        System.out.println(shortDateFormat.format(date));  //05-8-8 上午9:17 
+        System.out.println(mediumDateFormat.format(date)); //2005-8-8 9:17:42
+        System.out.println(longDateFormat.format(date));  //2005年8月8日 上午09时17分42秒
+        System.out.println(fullDateFormat.format(date));  //2005年8月8日 09时17分42秒 GMT+08:00
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"); // 'T'
+        System.out.println(sdf.parse("2017-06-01T12:00:00"));
+    }
 }
 ```
 
