@@ -86,9 +86,35 @@ SimpleDateFormat则是一个以与语言环境有关的方式来格式化和解�
 |z|时区|General time zone|Pacific Standard Time; PST; GMT-08:00|
 |Z|时区|RFC 822 time zone|-0800|
 
+## 一些实例
+```java
+public class DateExample
+{ 
+  public static void main(String[] args) 
+ {
+    Date date = new Date(); 
+    DateFormat shortDateFormat = DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.SHORT); 
+    DateFormat mediumDateFormat = DateFormat.getDateTimeInstance(DateFormat.MEDIUM,DateFormat.MEDIUM); 
+    DateFormat longDateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,DateFormat.LONG); 
+    DateFormat fullDateFormat = DateFormat.getDateTimeInstance(DateFormat.FULL,DateFormat.FULL); 
+ 
+    System.out.println(shortDateFormat.format(date));  //05-8-8 上午9:17 
+    System.out.println(mediumDateFormat.format(date)); //2005-8-8 9:17:42
+    System.out.println(longDateFormat.format(date));  //2005年8月8日 上午09时17分42秒
+    System.out.println(fullDateFormat.format(date));  //2005年8月8日 09时17分42秒 GMT+08:00
+    
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"); // 'T'
+    System.out.println(sdf.parse("2017-06-01T12:00:00"));
+  } 
+}
+```
+
+
 ## 总结
+
 1. 计算机内部记录的时间(Date date = new Date()), 为格林尼治标准时(GMT). 即java.util.Date代表一个时间点，其值为距公元1970年1月1日 00:00:00的毫秒数。所以它可以认为是没有时区和Locale概念的。
+
 
 2. 日期格式化类DateFormat, 对于不同地区的配置一般有两个点, 一个是Locale , 一个是TimeZone
    * 前者(Locale)使DateFormat按所配置的地区特性来输出文字(例如中国,美国,法国不同地区对日期的表示格式不一样,中国可能是2001年10月5日)
-   * 后者(TimeZone)让DateFormat知道怎么去转换,去调整时间偏移度,从而得到符合配置的时区的时间.
+   * 后者(TimeZone)让DateFormat知道怎么去转换,去调整时间偏移度,从而得到符合配置的时区的时间。
