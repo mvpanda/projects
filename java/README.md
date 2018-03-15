@@ -1,5 +1,5 @@
-1. [java memory model](https://github.com/mvpanda/projects/blob/master/java/jmm.md)
-2. [jvm](https://github.com/mvpanda/projects/blob/master/java/jvm-debug.md)
+1. [jvm](https://github.com/mvpanda/projects/blob/master/java/jvm-debug.md)
+2. [java memory model](https://github.com/mvpanda/projects/blob/master/java/jmm.md)
 3. java basics
     * [collections](https://github.com/mvpanda/projects/blob/master/java/collections.md)
     * [date](https://github.com/mvpanda/projects/blob/master/java/date.md)
