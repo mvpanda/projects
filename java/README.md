@@ -1,4 +1,4 @@
-1. [jvm](https://github.com/mvpanda/projects/blob/master/java/jvm-debug.md)
+1. [jvm](https://github.com/mvpanda/projects/blob/master/java/jvm.md)
 2. [java memory model](https://github.com/mvpanda/projects/blob/master/java/jmm.md)
 3. [类加载](https://github.com/mvpanda/projects/blob/master/java/class-loading.md)
 4. java basics
