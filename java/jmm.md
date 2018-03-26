@@ -2,7 +2,7 @@
 
 硬件效率 -> 多核cpu+多级缓存（并发和优化操作） -> 一致性问题(当读，写和检查共享变量时出现race condition)
 
-![内存模型示意图](https://github.com/mvpanda/projects/tree/master/java/imgs/jmm.png)
+![image](https://github.com/mvpanda/projects/blob/master/java/imgs/jmm.png)
 
 ## 定义
 
