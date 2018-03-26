@@ -1,7 +1,7 @@
 # nio
 ## 示意图
 
-![image](https://github.com/mvpanda/projects/tree/master/java/imgs/nio.png)
+![image](https://github.com/mvpanda/projects/blob/master/java/imgs/nio.png)
 
 ## Buffer
 
