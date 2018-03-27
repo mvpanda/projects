@@ -144,3 +144,17 @@ public class Echo {
 
 
 ```
+
+## zero-copy
+
+#### without zero-copy
+
+![image](https://github.com/mvpanda/projects/blob/master/java/imgs/zerocopy-off-mem.png)
+
+![image](https://github.com/mvpanda/projects/blob/master/java/imgs/zerocopy-off-syscall.png)
+
+#### with zero-copy
+
+![image](https://github.com/mvpanda/projects/blob/master/java/imgs/zerocopy-on-mem.png)
+
+![image](https://github.com/mvpanda/projects/blob/master/java/imgs/zerocopy-on-syscall.png)
