@@ -6,7 +6,7 @@
     * [date](https://github.com/mvpanda/projects/blob/master/java/date.md)
     * [regex](https://github.com/mvpanda/projects/blob/master/java/regex.md)
     * [nio](https://github.com/mvpanda/projects/blob/master/java/nio.md)
-    * [threads](https://github.com/mvpanda/projects/blob/master/java/threads.md)
+    * [concurrent](https://github.com/mvpanda/projects/blob/master/java/concurrent.md)
  
  5. spring
  6. thrift?
