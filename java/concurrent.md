@@ -4,6 +4,7 @@
 CAS,compare and swap的缩写，是一种原语。CAS 操作包含三个操作数 —— 内存位置（V）、预期原值（A）和新值(B)。 如果内存位置的值与预期原值相匹配，那么处理器会自动将该位置值更新为新值 。否则，处理器不做任何操作。
 
 乐观vs悲观、排他VS共享、公平VS非公平
+
 独占锁是一种悲观锁，synchronized就是一种独占锁，会导致其它所有需要锁的线程挂起，等待持有锁的线程释放锁。而另一个更加有效的锁就是乐观锁。所谓乐观锁就是，每次不加锁而是假设没有冲突而去完成某项操作，如果因为冲突失败就重试，直到成功为止。乐观锁用到的机制就是CAS。
 
 ## concurrent包结构
@@ -11,6 +12,7 @@ CAS,compare and swap的缩写，是一种原语。CAS 操作包含三个操作�
 ![image](https://github.com/mvpanda/projects/blob/master/java/imgs/concurrent-structure.png)
 
 AQS: AbstractQueuedSynchronizer
+
 Lock: ReentrantLock, ReentrantReadWriteLock
 
 ## 线程状态
