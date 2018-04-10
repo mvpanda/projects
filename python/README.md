@@ -97,6 +97,12 @@ __执行shell命令__
 ```python
 import commands
 (exitstatus, outtext) = commands.getstatusoutput('ls /bin/ls')
+
+def send_mail(mail_list,mail_title,mail_content):
+    interpreter = '/usr/local/bin/python'
+    processor = cur_script_path+'/sendmail.py'
+    pargs = [interpreter, processor,'None',mail_list,mail_title,mail_content]
+    subprocess.Popen(pargs)
 ```
 
 __捕获__
