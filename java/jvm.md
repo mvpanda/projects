@@ -19,6 +19,9 @@
 
 ![image](https://github.com/mvpanda/projects/blob/master/java/imgs/classloader-loadclass.png)
 
+参考：
+* https://blog.csdn.net/lck898989/article/details/78076194
+
 ## gc
 
 ![image](https://github.com/mvpanda/projects/blob/master/java/imgs/gc.png)
