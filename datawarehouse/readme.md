@@ -3,6 +3,8 @@
 ## ETL工具
 
 ## hadoop
+#### windows开发环境配置
+参考： https://www.cnblogs.com/S031602240/p/9059052.html
 #### hdfs
 #### mapreduce
 
